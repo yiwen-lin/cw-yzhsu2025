@@ -9176,6 +9176,12 @@ body {
   .feedback-content .feedback-title {
     font-size: 60px;
   }
+  .feedback-wrapper {
+    background-image: url("../images/feedback-image-mb.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .contact-home {
@@ -11231,21 +11237,21 @@ svg {
 }
 
 .section-separator {
-  border-left: 1px solid var(--bs-border-color);
+  /* border-left: 1px solid var(--bs-border-color);
   --bs-section-padding-left: 50px;
   padding-left: var(--bs-section-padding-left);
   position: relative;
-  z-index: 1;
+  z-index: 1; */
 }
 @media (max-width: 991.98px) {
-  .section-separator {
+  /* .section-separator {
     --bs-section-padding-left: 25px;
-  }
+  } */
 }
 @media (max-width: 767.98px) {
-  .section-separator {
+  /* .section-separator {
     --bs-section-padding-left: 10px;
-  }
+  } */
 }
 
 .btn-map-direction {
@@ -12255,7 +12261,7 @@ textarea {
   --bs-section-bg-margin-top: 24px;
   --bs-section-bg-overlay: rgba(var(--bs-secondary-rgb), .65);
   --bs-section-title-wrapper-margin: -160px;
-  background-image: url("../images/kv-pc.jpg");
+  /* background-image: url("../images/kv-pc.jpg"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -12275,22 +12281,22 @@ textarea {
   background: var(--bs-section-bg-overlay);
 } */
 .section-bg .section-title-wrapper {
-  margin-bottom: var(--bs-section-title-wrapper-margin);
+  /* margin-bottom: var(--bs-section-title-wrapper-margin); */
 }
 @media (max-width: 1399.98px) {
   .section-bg .section-title-wrapper {
-    --bs-section-title-wrapper-margin: -90px;
+    /* --bs-section-title-wrapper-margin: -90px; */
   }
 }
 @media (max-width: 991.98px) {
   .section-bg .section-title-wrapper {
-    --bs-section-title-wrapper-margin: -50px;
+    /* --bs-section-title-wrapper-margin: -50px; */
   }
 }
 @media (max-width: 991.98px) {
   .section-bg {
-    --bs-section-bg-padding-bottom: 60px;
-    --bs-section-bg-margin-top: 0;
+    /* --bs-section-bg-padding-bottom: 60px;
+    --bs-section-bg-margin-top: 0; */
   }
 }
 
@@ -25033,6 +25039,38 @@ textarea {
 .op-section .separator span {
   color:#FFF361;
 }
+
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background-image: url('../images/kv-pc1.jpg');
+  background-size: cover;
+  background-position: center;
+  clip-path: ellipse(100% 94% at 50% 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+@media (max-width: 768px) {
+  .hero-section {
+    background-image: url('../images/kv-mb.jpg');
+    background-size: cover;
+    clip-path: ellipse(130% 95% at 50% 0%);
+  }
+
+  .op-section .separator span {
+    display:block;
+  }
+  .op-section h2.separator {
+    font-size: 4.5rem;
+    line-height: 1.25;
+  }
+  
+}
 /* op end*/
 
 /* about 講師介紹*/
@@ -25212,3 +25250,26 @@ textarea {
 .swiper-slide:nth-child(4n+4) .blog-wrapper:after {
   background-color: #EABC66;
 } 
+/* Shop 深度報導 end*/
+
+/* footer */
+.section-footer {
+  font-size:1rem;
+}
+.section-footer a{
+  color: var(--bs-body-color);
+}
+@media (max-width: 768px) {
+  .section-footer {
+    font-size:0.95rem;
+    line-height: 1.7;
+  }
+}
+/* footer end*/
+
+
+@media (max-width: 768px) {
+  .section-full-width {
+    padding:0 15px;
+  }
+}
