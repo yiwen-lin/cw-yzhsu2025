@@ -148,6 +148,7 @@
       loop: true,      
       spaceBetween: 20,
       slidesPerGroup: 1,
+      autoHeight: true,
       breakpoints: {
         380: {
           slidesPerView: 1,
@@ -175,6 +176,45 @@
       },
     });
   }
+
+  // Speaker Swiper
+  if ($('.speaker-swiper').length > 0) {
+    new Swiper(".speaker-swiper", {
+      loop: true,      
+      spaceBetween: 0,
+      slidesPerView: 1,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true
+      },
+      pagination: {
+        el: ".speaker-swiper-pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".speaker-progress-button-next",
+        prevEl: ".speaker-progress-button-prev",
+      },
+    });
+  }
+
+  // 平滑滾動功能
+  $('.nav-link[href^="#"]').on('click', function(e) {
+    e.preventDefault();
+    
+    var target = $(this.getAttribute('href'));
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top - 80 // 減去 header 高度
+      }, 800);
+      
+      // 手機版自動關閉導航選單
+      var offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('architronixNavbar'));
+      if (offcanvas) {
+        offcanvas.hide();
+      }
+    }
+  });
   // =======Swiper .shop-swiper========>>>>>
 
 

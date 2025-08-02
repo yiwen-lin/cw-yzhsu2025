@@ -10224,8 +10224,13 @@ body {
   position: relative;
   z-index: 1;
 }
+
+/* 上下交錯效果：偶數項目向上偏移70px */
+.swiper-slide:nth-child(even) .blog-wrapper {
+  transform: translateY(50px);
+}
 .blog-wrapper .blog-details {
-  margin-top: 30px;
+  margin: 30px 20px;
 }
 @media (max-width: 991.98px) {
   .blog-wrapper .blog-details {
@@ -10245,6 +10250,149 @@ body {
 }
 .blog-title a {
   padding-bottom: 4px;
+}
+
+/* 確保部落格標題完整顯示 */
+.blog-title {
+  overflow: visible !important;
+  text-overflow: unset !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  display: block !important;
+}
+
+/* 部落格摘要樣式 - 確保完整顯示 */
+.blog-excerpt {
+  margin-top: 15px;
+  margin-bottom: 0;
+  line-height: 1.6;
+  color: #fff;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* Speaker Swiper 樣式 */
+.speaker-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.speaker-swiper .swiper-slide {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.speaker-swiper .swiper-slide-active {
+  opacity: 1;
+}
+
+/* 導航區域樣式 - 移到藍底範圍下方 */
+.speaker-navigation-wrapper {
+  background: #fff;
+  padding: 30px 0;
+  margin-top: 0;
+}
+
+.speaker-navigation {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.speaker-swiper-pagination {
+  flex: 1;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0 20px;
+}
+
+.speaker-swiper-pagination .swiper-pagination-progressbar-fill {
+  background: var(--bs-primary);
+  height: 100%;
+  border-radius: 2px;
+}
+
+.speaker-progress-button-prev,
+.speaker-progress-button-next {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  padding: 10px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+.speaker-progress-button-prev:hover,
+.speaker-progress-button-next:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.speaker-progress-button-prev svg,
+.speaker-progress-button-next svg {
+  fill: var(--bs-primary);
+  transition: transform 0.3s ease;
+  width: 25px;
+  height: 16px;
+}
+
+.speaker-progress-button-prev:hover svg,
+.speaker-progress-button-next:hover svg {
+  transform: scale(1.1);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  /* 防止水平滾動 */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .speaker-navigation {
+    max-width: 300px;
+  }
+  
+  .speaker-progress-button-prev,
+  .speaker-progress-button-next {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .speaker-progress-button-prev svg,
+  .speaker-progress-button-next svg {
+    width: 20px;
+    height: 13px;
+  }
+  
+  .about-image {
+    margin-top: 30px;
+  }
+  
+  .about-bg {
+    margin-top: 30px;
+  }
+  
+  .logo-jpg {
+    height: 26px;
+  }
+  
+  /* 手機版隱藏導航項目中的換行 */
+  .nav-item br {
+    display: none;
+  }
 }
 
 .section-blog-single {
@@ -24874,3 +25022,182 @@ textarea {
 .op-section .separator span {
   color:#FFF361;
 }
+/* op end*/
+
+/* about 講師介紹*/
+#about-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 50px;
+  margin-top:60px;
+}
+
+#about-container .name {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+#about-container .title {
+  font-size: 1rem;
+  font-weight: normal;
+  opacity: 0.9;
+  line-height: 1.6;
+  text-align: right;
+  /* margin-top: 10px; */
+}
+
+#about-container .divider {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 30px 0;
+}
+
+#about-container .main-quote {
+  margin-bottom: 40px;
+}
+
+#about-container .quote-line {
+  font-size: 1.38rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  color:#FFF361;
+}
+
+#about-container .content {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify;
+  opacity: 0.95;
+}
+
+#about-container .lectures-section {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+#about-container .section-title {
+  font-size: 1.38rem;
+  margin-bottom: 20px;
+  padding:0 20px;
+  border-left: 2px solid #FFF361;
+  border-right: 2px solid #FFF361;
+  color:#FFF361;
+  display: inline-block;
+}
+
+#about-container .lecture-item {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 20px; */
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+#about-container .lecture-item:hover {
+  transform: translateX(10px);
+  opacity: 0.8;
+}
+
+#about-container .lecture-name {
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+
+#about-container .play-button {
+  width: 26px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  transition: background 0.3s ease;
+}
+
+#about-container .play-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#about-container .play-icon {
+  width: 0;
+  height: 0;
+  border-left: 7px solid white;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  margin-left: 3px;
+}
+
+#about-container .arrow {
+  font-size: 1.1rem;
+  /* color: rgba(255, 255, 255, 0.7); */
+}
+
+@media (max-width: 768px) {
+  #about-container  .header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  #about-container .title {
+      text-align: left;
+      margin-top: 15px;
+  }
+  
+  #about-container .name {
+      /* font-size: 2.5rem; */
+  }
+  
+  #about-container .quote-line {
+      /* font-size: 1.5rem; */
+  }
+  
+  #about-container .content {
+      /* font-size: 1rem; */
+  }
+  
+  #about-container .lecture-name {
+      /* font-size: 1.1rem; */
+  }
+}
+/* about 講師介紹 end*/
+
+
+/* Shop 深度報導*/
+.blog-image {
+  padding:0 20px;
+}
+.blog-image .img-fluid {
+  border-radius: 20px;
+}
+
+.blog-wrapper:after {
+  position: absolute;
+  top: 160px;
+  right: 0;
+  bottom: -40px;
+  left: 0;
+  z-index: -1;
+  content: "";
+  border-radius: 20px;
+  background-color: #4DB5E0;
+}
+
+/* .swiper-slide:nth-child(4n+1) .blog-wrapper:after {
+  background-color: #4DB5E0;
+}  */
+.swiper-slide:nth-child(4n+2) .blog-wrapper:after {
+  background-color: #C1BEF1;
+} 
+.swiper-slide:nth-child(4n+3) .blog-wrapper:after {
+  background-color: #86BEA0;
+} 
+.swiper-slide:nth-child(4n+4) .blog-wrapper:after {
+  background-color: #EABC66;
+} 
