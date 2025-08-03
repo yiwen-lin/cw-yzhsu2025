@@ -160,7 +160,7 @@
           slidesPerView: 3,
           spaceBetween: 30,
         },
-        1365: {
+        1300: {
           slidesPerView: 4,
           spaceBetween: 30,
         }
@@ -180,6 +180,7 @@
   // Speaker Swiper
   if ($('.speaker-swiper').length > 0) {
     new Swiper(".speaker-swiper", {
+      autoHeight: true,
       loop: true,      
       spaceBetween: 0,
       slidesPerView: 1,
@@ -431,6 +432,68 @@
     });
   }
   // =======Swiper .project-swiper========>>>>>
+
+  // Forum Swiper
+
+  if ($('.forum-swiper').length > 0) {
+    let swiperInitialized = false;
+    const swiper = new Swiper(".forum-swiper", {
+      loop: true,      
+      spaceBetween: 20,
+      slidesPerView: 1,
+      pagination: {
+        el: ".forum-swiper-pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".forum-progress-button-next",
+        prevEl: ".forum-progress-button-prev",
+      },
+      
+      on: {
+        init: function() {
+          setTimeout(() => {
+            swiperInitialized = true;
+          }, 100);
+        },
+        slideChangeTransitionEnd: function () {
+          const previousSlide = this.slides[this.previousIndex];
+          pauseVideosInSlide(previousSlide);
+        },
+      },
+    });
+  }
+
+  function pauseVideosInSlide(slide) {
+    const youtubeIframes = slide.querySelectorAll('iframe[src*="youtube.com"], iframe[src*="youtu.be"]');
+    youtubeIframes.forEach(iframe => {
+      iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    });
+  }
+
+  function ensureYouTubeAPIEnabled() {
+    const youtubeIframes = document.querySelectorAll('iframe[src*="youtube.com"], iframe[src*="youtu.be"]');
+    youtubeIframes.forEach(iframe => {
+        let src = iframe.src;
+        if (!src.includes('enablejsapi=1')) {
+            const separator = src.includes('?') ? '&' : '?';
+            iframe.src = src + separator + 'enablejsapi=1';
+        }
+    });
+  }
+
+  function pauseAllYouTubeVideos(slide) {
+    const youtubeIframes = slide.querySelectorAll('iframe[src*="youtube.com"], iframe[src*="youtu.be"]');
+    youtubeIframes.forEach(iframe => {
+        try {
+            iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            
+        } catch (error) {
+            console.warn('PAUSE:', error);
+        }
+    });
+  }
+
 
 
 
@@ -747,7 +810,6 @@ new WOW().init();
     })
   }
   // =================  Coustomizer closing ============= 
-
 
 })(jQuery);
 

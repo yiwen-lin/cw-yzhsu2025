@@ -7695,7 +7695,7 @@ body {
     font-size: 66px;
   }
 }
-@media (max-width: 372px) {
+@media (max-width: 390px) {
   .display-2 {
     font-size: 60px;
   }
@@ -10338,7 +10338,7 @@ body {
 .speaker-progress-button-next:hover {
   opacity: 1;
   background: rgba(0, 0, 0, 0.1);
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }
 
 .speaker-progress-button-prev svg,
@@ -10351,7 +10351,7 @@ body {
 
 .speaker-progress-button-prev:hover svg,
 .speaker-progress-button-next:hover svg {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 
 /* 響應式設計 */
@@ -10359,7 +10359,7 @@ body {
   /* 防止水平滾動 */
   body {
     overflow-x: hidden;
-    width: 100%;
+    width: 100vw;
   }
   
   .container {
@@ -11067,10 +11067,27 @@ svg {
   width: 94.65%;
   margin: 0 51px;
 }
+
+.section-about .decoration--left {
+    left: -51px;
+}
+
+.section-shop .decoration--right {
+  right: -51px;
+}
+
 @media (max-width: 1399.98px) {
   .section-full-width {
     width: 93%;
     margin: 0 49px;
+  }
+
+  .section-about .decoration--left {
+    left: -49px;
+  }
+
+  .section-shop .decoration--right {
+    right: -49px;
   }
 }
 @media (max-width: 1199.98px) {
@@ -11094,6 +11111,14 @@ svg {
     width: 95%;
     margin: 0 32px;
   }
+
+  .section-about .decoration--left {
+    left: -32px;
+  }
+
+  .section-shop .decoration--right {
+    right: -32px;
+  }
 }
 @media (min-width: 1400px) and (max-width: 1450px) {
   .section-full-width {
@@ -11104,10 +11129,26 @@ svg {
   .section-full-width {
     margin: 0 40px;
   }
+
+  .section-about .decoration--left {
+    left: -40px;
+  }
+
+  .section-shop .decoration--right {
+    right: -40px;
+  }
 }
 @media (min-width: 1551px) and (max-width: 1850px) {
   .section-full-width {
     margin: 0 44.5px;
+  }
+
+  .section-about .decoration--left {
+    left: -44.5px;
+  }
+
+  .section-shop .decoration--right {
+    right: -44.5px;
   }
 }
 @media screen and (min-width: 1925px) {
@@ -11117,6 +11158,7 @@ svg {
     width: 100%;
   }
 }
+
 @media screen and (min-width: 1925px) {
   .max-width {
     max-width: 1920px;
@@ -11350,7 +11392,7 @@ svg {
 .swiper-custom-progress .swiper-button-prev::after, .swiper-custom-progress .swiper-button-next::after {
   content: none;
 }
-.swiper-custom-progress .service-swiper-pagination-wrapper, .swiper-custom-progress .testimonial-swiper-pagination-wrapper, .swiper-custom-progress .shop-swiper-pagination-wrapper, .swiper-custom-progress .blog-swiper-pagination-wrapper, .swiper-custom-progress .project-swiper-pagination-wrapper {
+.swiper-custom-progress .service-swiper-pagination-wrapper, .swiper-custom-progress .testimonial-swiper-pagination-wrapper, .swiper-custom-progress .shop-swiper-pagination-wrapper, .swiper-custom-progress .blog-swiper-pagination-wrapper, .swiper-custom-progress .project-swiper-pagination-wrapper, .swiper-custom-progress .forum-swiper-pagination-wrapper {
   margin-top: var(--bs-progress-pagination-wrapper-margin);
   position: relative;
 }
@@ -11367,15 +11409,15 @@ svg {
     gap: 12px;
   }
 }
-.swiper-custom-progress .service-swiper-pagination, .swiper-custom-progress .testimonial-swiper-pagination, .swiper-custom-progress .shop-swiper-pagination, .swiper-custom-progress .blog-swiper-pagination, .swiper-custom-progress .project-swiper-pagination {
+.swiper-custom-progress .service-swiper-pagination, .swiper-custom-progress .testimonial-swiper-pagination, .swiper-custom-progress .shop-swiper-pagination, .swiper-custom-progress .blog-swiper-pagination, .swiper-custom-progress .project-swiper-pagination, .swiper-custom-progress .forum-swiper-pagination {
   width: var(--bs-swiper-pagination-width);
 }
-.swiper-custom-progress .service-swiper-pagination.swiper-pagination-progressbar, .swiper-custom-progress .testimonial-swiper-pagination.swiper-pagination-progressbar, .swiper-custom-progress .shop-swiper-pagination.swiper-pagination-progressbar, .swiper-custom-progress .blog-swiper-pagination.swiper-pagination-progressbar, .swiper-custom-progress .project-swiper-pagination.swiper-pagination-progressbar {
+.swiper-custom-progress .service-swiper-pagination.swiper-pagination-progressbar, .swiper-custom-progress .testimonial-swiper-pagination.swiper-pagination-progressbar, .swiper-custom-progress .shop-swiper-pagination.swiper-pagination-progressbar, .swiper-custom-progress .blog-swiper-pagination.swiper-pagination-progressbar, .swiper-custom-progress .project-swiper-pagination.swiper-pagination-progressbar, .swiper-custom-progress .forum-swiper-pagination.swiper-pagination-progressbar {
   background: var(--bs-swiper-pagination-line-color);
   border-radius: 10px;
   height: 2px;
 }
-.swiper-custom-progress .service-swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill, .swiper-custom-progress .testimonial-swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill, .swiper-custom-progress .shop-swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill, .swiper-custom-progress .blog-swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill, .swiper-custom-progress .project-swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+.swiper-custom-progress .service-swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill, .swiper-custom-progress .testimonial-swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill, .swiper-custom-progress .shop-swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill, .swiper-custom-progress .blog-swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill, .swiper-custom-progress .project-swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill, .swiper-custom-progress .forum-swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   height: 5px;
   top: -2px;
 }
@@ -25271,5 +25313,45 @@ textarea {
 @media (max-width: 768px) {
   .section-full-width {
     padding:0 15px;
+  }
+}
+
+.section-about, .section-shop {
+  position: relative;
+}
+
+.section-about .decoration, .section-shop .decoration {
+  position: absolute;
+  z-index: -1;
+}
+
+.section-about .decoration img, .section-shop .decoration img {
+  width: 100%;
+}
+
+.section-about .decoration--left {
+  display: block;
+  width: 244px;
+  height: 282px;
+  top: -118px;
+}
+
+.section-shop .decoration--right {
+  display: block;
+  width: 244px;
+  height: 420px;
+  top: -62px;
+}
+
+@media (max-width: 768px) {
+  .section-about .decoration--left {
+    display: none;
+  }
+
+  .section-shop .decoration--right {
+    width: 106px;
+    height: 185px;
+    top: -26px;
+    right: 0 !important;
   }
 }
