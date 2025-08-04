@@ -45,7 +45,7 @@
   function couponFun(){
     let showCoupon = $('.show-coupon');
     let checkoutForm = $('.checkout-form');
-    
+
     $('.show-coupon').on('click', function(){
       if(!checkoutForm.hasClass('open')){
         checkoutForm.addClass('open');
@@ -60,7 +60,7 @@
   // =======couponFun========>>>>>
 
 
-  // =======CounterUp JS-Odometer========>>>>>   
+  // =======CounterUp JS-Odometer========>>>>>
   if ($('.odometer').length > 0) {
     $(window).on('scroll', function () {
       let preloaderTimeout = 2500;
@@ -87,7 +87,7 @@
   // =======Swiper .service-swiper========>>>>>
   if ($('.service-swiper').length > 0) {
     new Swiper(".service-swiper", {
-      loop: true,      
+      loop: true,
       spaceBetween: 20,
       slidesPerGroup: 1,
       breakpoints: {
@@ -121,7 +121,7 @@
   // =======Swiper .shop-2-swiper========>>>>>
   if ($('.shop-2-swiper').length > 0) {
     new Swiper(".shop-2-swiper", {
-      loop: true,      
+      loop: true,
       spaceBetween: 20,
       slidesPerGroup: 1,
       breakpoints: {
@@ -139,16 +139,14 @@
       pagination: {
         el: ".shop-swiper-pagination",
         type: "progressbar",
-      },      
+      },
     });
   }
 
   if ($('.shop-swiper').length > 0) {
     new Swiper(".shop-swiper", {
-      loop: true,      
+      loop: false,
       spaceBetween: 20,
-      slidesPerGroup: 1,
-      autoHeight: true,
       breakpoints: {
         380: {
           slidesPerView: 1,
@@ -181,7 +179,7 @@
   if ($('.speaker-swiper').length > 0) {
     new Swiper(".speaker-swiper", {
       autoHeight: true,
-      loop: true,      
+      loop: true,
       spaceBetween: 0,
       slidesPerView: 1,
       effect: "fade",
@@ -202,13 +200,13 @@
   // 平滑滾動功能
   $('.nav-link[href^="#"]').on('click', function(e) {
     e.preventDefault();
-    
+
     var target = $(this.getAttribute('href'));
     if (target.length) {
       $('html, body').animate({
         scrollTop: target.offset().top - 80 // 減去 header 高度
       }, 800);
-      
+
       // 手機版自動關閉導航選單
       var offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('architronixNavbar'));
       if (offcanvas) {
@@ -222,7 +220,7 @@
   // =======Swiper .blog-swiper========>>>>>
   if ($('.blog-swiper').length > 0) {
     new Swiper(".blog-swiper", {
-      loop: true,      
+      loop: true,
       spaceBetween: 20,
       slidesPerGroup: 1,
       breakpoints: {
@@ -252,7 +250,7 @@
   // =======Swiper .testimonial-swiper========>>>>>
   if ($('.testimonial-swiper').length > 0) {
     new Swiper(".testimonial-swiper", {
-      loop: true,      
+      loop: true,
       spaceBetween: 20,
       breakpoints: {
         380: {
@@ -438,7 +436,7 @@
   if ($('.forum-swiper').length > 0) {
     let swiperInitialized = false;
     const swiper = new Swiper(".forum-swiper", {
-      loop: true,      
+      loop: true,
       spaceBetween: 20,
       slidesPerView: 1,
       pagination: {
@@ -449,7 +447,7 @@
         nextEl: ".forum-progress-button-next",
         prevEl: ".forum-progress-button-prev",
       },
-      
+
       on: {
         init: function() {
           setTimeout(() => {
@@ -487,7 +485,7 @@
     youtubeIframes.forEach(iframe => {
         try {
             iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-            
+
         } catch (error) {
             console.warn('PAUSE:', error);
         }
@@ -497,7 +495,7 @@
 
 
 
-  // =======Magnific-PopUp========>>>>>    
+  // =======Magnific-PopUp========>>>>>
   $('.image-link').magnificPopup({
     type: 'image',
     gallery: {
@@ -564,34 +562,34 @@
   if ($('#map').length > 0) {
     var map = L.map('map').setView([35.76428892315803, -40.45770338684278], 3);
     var locationsArray = [];
-  
+
     function clickZoom(e) {
       map.setView(e.target.getLatLng(), 16);
     }
-  
+
     $.each(architronixLocations, function(index, location) {
       // Create Marker
       var marker = L.marker(location.markerPoint, {
         title: location.title,
         className: "marker-usa"  // Class for the marker
       }).addTo(map);
-  
+
       // Bind Popup
       marker.bindPopup(`<div class="card card-map architronix-map-card"><div class="card-body">
-                          <h5 class="card-title service-title">${location.title}</h5><p class="mb-0 fw-semibold">${location.subtitle}</p><p class="mb-0 contact-home">${location.address}</p>                          
+                          <h5 class="card-title service-title">${location.title}</h5><p class="mb-0 fw-semibold">${location.subtitle}</p><p class="mb-0 contact-home">${location.address}</p>
                         </div></div>`).on('click', clickZoom);
-  
+
       // Store the location in the array
       locationsArray.push({ marker: marker, location: location });
     });
-  
 
-    
+
+
      // Handle external link clicks
     $('.btn-map-direction').on('click', function(e) {
       e.preventDefault();
       var markerTitle = $(this).data('title');
-      
+
       // Find the marker in the array based on the title
       var selectedMarker = locationsArray.find(function(item) {
         return item.location.title === markerTitle;
@@ -604,17 +602,17 @@
         map.setView(selectedMarker.marker.getLatLng(), 12);
       }
     });
-  
+
     L.tileLayer('https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}', {
       maxZoom: 26,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
-  
+
     // Outside click event
     $(document).on('click', function(e) {
       var mapContainer = $('#map');
-      var isClickInsideMap = mapContainer.has(e.target).length > 0 || mapContainer.is(e.target); 
-     
+      var isClickInsideMap = mapContainer.has(e.target).length > 0 || mapContainer.is(e.target);
+
     });
   }
   // =========Leaflet map=========>>>>>
@@ -655,7 +653,7 @@
               img_scroll = scroll_slow * divid / 150;
             elemts.css({
               "transform": "translateX(" + img_scroll + "px)",
-            });           
+            });
           }
         }
       });
@@ -684,11 +682,11 @@
                   $(listItem).find('.text-line-2').removeClass('text-line-animation');
               }
           });
-      }      
-      handleVisibility();      
+      }
+      handleVisibility();
       $(window).on("scroll", handleVisibility);
     });
-  }    
+  }
   // ========= Stroke-animation When visible on view-port=========>>>>>
 
 
@@ -707,7 +705,7 @@
     });
   }
   // ========= Team-Wrapper hover=========>>>>>
-  
+
 
 
 //===============smooth scrolling ===================
@@ -753,7 +751,7 @@ new WOW().init();
     var form = $(this);
     var formData = form.serialize();
     var responseDiv = form.find('.response');
-    form.find('[type="submit"]').prop('disabled', true); 
+    form.find('[type="submit"]').prop('disabled', true);
     formData += '&id='+form.attr('id');
     responseDiv.html('<p>Working....</p>');
     $.ajax({
@@ -769,11 +767,11 @@ new WOW().init();
           responseDiv.empty().html('<div class="alert alert-sucess">'+data.msg+'</div>');
           form.get(0).reset();
         }
-        form.find('[type="submit"]').prop('disabled', false); 
+        form.find('[type="submit"]').prop('disabled', false);
       },
       error: function(error) {
         console.log('Error:', error);
-        form.find('[type="submit"]').prop('disabled', false); 
+        form.find('[type="submit"]').prop('disabled', false);
       }
     });
   });
@@ -809,7 +807,7 @@ new WOW().init();
       $('[data-toggle="tooltip"]').tooltip({delay: { "show": 300, "hide": 300 }})
     })
   }
-  // =================  Coustomizer closing ============= 
+  // =================  Coustomizer closing =============
 
 })(jQuery);
 

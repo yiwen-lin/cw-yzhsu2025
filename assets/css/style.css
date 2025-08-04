@@ -7510,7 +7510,7 @@ body {
   --bs-body-line-height: 160%;
   /* --bs-body-font-family: "Plus Jakarta Sans", sans-serif; */
   --bs-body-font-family: "Noto Sans TC", -apple-system, Segoe UI, Roboto, "微軟正黑體", "Helvetica Neue", Arial, sans-serif;
-  
+
   --bs-body-color: var(--bs-primary);
   overflow-x: hidden;
 }
@@ -10231,10 +10231,6 @@ body {
   z-index: 1;
 }
 
-/* 上下交錯效果：偶數項目向上偏移70px */
-.swiper-slide:nth-child(even) .blog-wrapper {
-  transform: translateY(50px);
-}
 .blog-wrapper .blog-details {
   margin: 30px 20px;
 }
@@ -10361,40 +10357,40 @@ body {
     overflow-x: hidden;
     width: 100vw;
   }
-  
+
   .container {
     padding-left: 15px;
     padding-right: 15px;
   }
-  
+
   .speaker-navigation {
     max-width: 300px;
   }
-  
+
   .speaker-progress-button-prev,
   .speaker-progress-button-next {
     width: 40px;
     height: 40px;
   }
-  
+
   .speaker-progress-button-prev svg,
   .speaker-progress-button-next svg {
     width: 20px;
     height: 13px;
   }
-  
+
   .about-image {
     margin-top: 30px;
   }
-  
+
   .about-bg {
     margin-top: 30px;
   }
-  
+
   .logo-jpg {
     height: 26px;
   }
-  
+
   /* 手機版隱藏導航項目中的換行 */
   .nav-item br {
     display: none;
@@ -25111,7 +25107,7 @@ textarea {
     font-size: 4.5rem;
     line-height: 1.25;
   }
-  
+
 }
 /* op end*/
 
@@ -25235,24 +25231,24 @@ textarea {
       flex-direction: column;
       align-items: flex-start;
   }
-  
+
   #about-container .title {
       text-align: left;
       margin-top: 15px;
   }
-  
+
   #about-container .name {
       /* font-size: 2.5rem; */
   }
-  
+
   #about-container .quote-line {
       /* font-size: 1.5rem; */
   }
-  
+
   #about-container .content {
       /* font-size: 1rem; */
   }
-  
+
   #about-container .lecture-name {
       /* font-size: 1.1rem; */
   }
@@ -25272,7 +25268,7 @@ textarea {
   position: absolute;
   top: 160px;
   right: 0;
-  bottom: -40px;
+  bottom: -30px;
   left: 0;
   z-index: -1;
   content: "";
@@ -25285,13 +25281,13 @@ textarea {
 }  */
 .swiper-slide:nth-child(4n+2) .blog-wrapper:after {
   background-color: #C1BEF1;
-} 
+}
 .swiper-slide:nth-child(4n+3) .blog-wrapper:after {
   background-color: #86BEA0;
-} 
+}
 .swiper-slide:nth-child(4n+4) .blog-wrapper:after {
   background-color: #EABC66;
-} 
+}
 /* Shop 深度報導 end*/
 
 /* footer */
@@ -25354,4 +25350,13 @@ textarea {
     top: -26px;
     right: 0 !important;
   }
+}
+
+
+.shop-swiper .swiper-slide:nth-child(even) {
+  margin-top: 50px;
+}
+
+.shop-swiper .swiper-slide:nth-child(odd) {
+  margin-top: 0;
 }
