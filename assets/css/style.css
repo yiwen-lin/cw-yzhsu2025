@@ -10380,7 +10380,8 @@ body {
   }
 
   .about-image {
-    margin-top: 30px;
+    margin-top: 0px;
+    margin-bottom: 30px;
   }
 
   .about-bg {
@@ -25117,7 +25118,7 @@ textarea {
   justify-content: space-between;
   align-items: flex-start;
   /* margin-bottom: 50px; */
-  margin-top:70px;
+  /* margin-top:70px; */
 }
 
 #about-container .name {
