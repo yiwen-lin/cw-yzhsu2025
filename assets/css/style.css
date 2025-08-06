@@ -25289,6 +25289,7 @@ textarea {
 .swiper-slide:nth-child(4n+4) .blog-wrapper:after {
   background-color: #EABC66;
 }
+
 /* Shop 深度報導 end*/
 
 /* footer */
@@ -25340,6 +25341,14 @@ textarea {
   top: -62px;
 }
 
+.shop-swiper .swiper-slide:nth-child(even) {
+  margin-top: 50px;
+}
+
+.shop-swiper .swiper-slide:nth-child(odd) {
+  margin-top: 0;
+}
+
 @media (max-width: 768px) {
   .section-about .decoration--left {
     display: none;
@@ -25351,13 +25360,10 @@ textarea {
     top: -26px;
     right: 0 !important;
   }
+
+  .shop-swiper .swiper-slide:nth-child(even) {
+    margin-top: 0px;
+  }
 }
 
 
-.shop-swiper .swiper-slide:nth-child(even) {
-  margin-top: 50px;
-}
-
-.shop-swiper .swiper-slide:nth-child(odd) {
-  margin-top: 0;
-}
